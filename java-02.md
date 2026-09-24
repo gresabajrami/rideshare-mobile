@@ -31,7 +31,7 @@ Udhetari mund te shikoje udhetimet dhe te kerkoje nje vend
 Shoferi mund ta pranoje ose refuzoje kerkesen e udhetarit
 
 ## 5. Çfarë e lëmë për më vonë?
-[PLOTËSO] Shëno dy gjëra që nuk na duhen ende.
+ Shëno dy gjëra që nuk na duhen ende.
 
 Pagesat online dhe ndarja automatike e shpenzimeve.
 
