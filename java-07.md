@@ -15,7 +15,12 @@ Në skedarin schema.sql disa emra kolonash nuk përputheshin me strukturën aktu
 Në skedarin schema.sql mungonte kolona shofer_id që ekziston në databazën aktuale.
 
 Korrigjimi
-Skedari: schema.sql
+Korrigjimi
+Skedari: aplikacioni/schema.sql
+
+Arsyeja:
+
+Përditësova skedarin aplikacioni/schema.sql për ta përputhur me strukturën aktuale të databazës Neon. Ndryshova kolonat destinacioni dhe vende në mberritja dhe vende_lira si dhe shtova kolonën shofer_id.
 
 Arsyeja:
 
@@ -71,5 +76,6 @@ Para:
 
 https://github.com/gresabajrami/rideshare-mobile/commit/454c8fa0b47cabe43d6e8fabcd4fd95c47f1d2fb
 
-Pas:
+Pas:  
+https://github.com/gresabajrami/rideshare-mobile/commit/9bad4b8821353ddf91bdcb57cf67cf14f4bd0631
 
