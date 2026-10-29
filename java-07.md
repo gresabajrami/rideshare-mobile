@@ -2,10 +2,10 @@
 
 ## Rasti im
 
-**P7-646**
+P7-646
 
-**GitHub:** gresabajrami
-**Rasti:** Rasti 2 – Pa vende
+GitHub: gresabajrami
+Rasti: Rasti 2 – Pa vende
 
 ## Parashikimi
 
@@ -22,35 +22,35 @@ Përditësova `aplikacioni/schema.sql` që emrat e kolonave të përputhen me st
 
 ## Korrigjimi
 
-**Skedari:** `aplikacioni/src/app/udhetimi/[id]/page.tsx`
+Skedari: aplikacioni/src/app/udhetimi/[id]/page.tsx
 
-**Arsyeja:** Faqja e detajeve kontrollon numrin e vendeve të lira. Kur vlera është 0, shfaq butonin e çaktivizuar “Nuk ka vende të lira” dhe nuk ofron lidhjen “Kërko vend”. Kur ka vende të lira, shfaq lidhjen për të vazhduar te kërkesa. Kështu përdoruesit nuk i premtohet rezervim kur udhëtimi është plot.
+Arsyeja: Faqja e detajeve kontrollon numrin e vendeve të lira. Kur vlera është 0, shfaq butonin e çaktivizuar “Nuk ka vende të lira” dhe nuk ofron lidhjen “Kërko vend”. Kur ka vende të lira, shfaq lidhjen për të vazhduar te kërkesa. Kështu përdoruesit nuk i premtohet rezervim kur udhëtimi është plot.
 
 Për korrigjimin e skemës, ndryshova gjithashtu `aplikacioni/schema.sql`: zëvendësova emrat e kolonave që nuk përputheshin dhe shtova `shofer_id`.
 
 ## Prova 1
 
-**Hapat:** Hapa udhëtimin Lipjan – AAB me 0 vende të lira.
+Hapat: Hapa udhëtimin Lipjan – AAB me 0 vende të lira.
 
-**Pritshmëria:** Përdoruesi nuk duhet të ketë mundësi të kërkojë vend.
+Pritshmëria: Përdoruesi nuk duhet të ketë mundësi të kërkojë vend.
 
-**Vëzhgimi:** Aplikacioni shfaqi 0 vende të lira dhe mesazhin “Nuk ka vende të lira”.
+Vëzhgimi: Aplikacioni shfaqi 0 vende të lira dhe mesazhin “Nuk ka vende të lira”.
 
 ## Prova 2
 
-**Hapat:** Zgjodha një udhëtim tjetër me vende të lira.
+Hapat: Zgjodha një udhëtim tjetër me vende të lira.
 
-**Pritshmëria:** Kur ka vende të lira, duhet të shfaqet mundësia për të vazhduar me kërkesën për vend.
+Pritshmëria: Kur ka vende të lira, duhet të shfaqet mundësia për të vazhduar me kërkesën për vend.
 
-**Vëzhgimi:** U shfaqën 2 vende të lira dhe lidhja “Kërko vend”.
+Vëzhgimi: U shfaqën 2 vende të lira dhe lidhja “Kërko vend”.
 
 ## Prova 3
 
-**Hapat:** Klikova te “Kërko vend” në një udhëtim me vende të lira.
+Hapat: Klikova te “Kërko vend” në një udhëtim me vende të lira.
 
-**Pritshmëria:** Duhet të shfaqet statusi i kërkesës dhe të jetë e qartë që bëhet fjalë vetëm për demonstrim.
+Pritshmëria: Duhet të shfaqet statusi i kërkesës dhe të jetë e qartë që bëhet fjalë vetëm për demonstrim.
 
-**Vëzhgimi:** U shfaq statusi “Simulim: Në pritje” dhe njoftimi që kërkesa nuk i është dërguar shoferit.
+Vëzhgimi: U shfaq statusi “Simulim: Në pritje” dhe njoftimi që kërkesa nuk i është dërguar shoferit.
 
 ## Ndihma nga AI
 
