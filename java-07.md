@@ -43,4 +43,4 @@ Gjatë punës përdora AI për të kontrolluar strukturën e skedarit `schema.sq
 ## Commit-et
 
 - **Para korrigjimit:** https://github.com/gresabajrami/rideshare-mobile/commit/454c8fa0b47cabe43d6e8fabcd4fd95c47f1d2fb
-- **Pas korrigjimit:** 
+- **Pas korrigjimit:** https://github.com/gresabajrami/rideshare-mobile
