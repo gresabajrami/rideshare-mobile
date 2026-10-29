@@ -77,5 +77,5 @@ Para:
 https://github.com/gresabajrami/rideshare-mobile/commit/454c8fa0b47cabe43d6e8fabcd4fd95c47f1d2fb
 
 Pas:  
-https://github.com/gresabajrami/rideshare-mobile/commit/9bad4b8821353ddf91bdcb57cf67cf14f4bd0631
+https://github.com/gresabajrami/rideshare-mobile/commit/4e2e9e4cc3ee26937bdf43caf750713dde3000b9
 
