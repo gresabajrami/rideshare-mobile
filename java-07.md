@@ -1,46 +1,75 @@
-# Java 7 – Testimi, korrigjimi dhe shpjegimi i RideShare
+Java 7 – Testimi, korrigjimi dhe shpjegimi i RideShare
+Rasti im
+P7-646
 
-## Rasti i zgjedhur
-Rasti 2 – Udhëtimi pa vende të lira.
+GitHub: gresabajrami
 
-## Parashikimi im
-Nëse një udhëtim nuk ka më vende të lira (0 vende), përdoruesi nuk duhet të ketë mundësi të kërkojë një vend. Në këtë rast, aplikacioni duhet të shfaqë një njoftim që tregon se nuk ka vende të disponueshme dhe të mos lejojë vazhdimin e kërkesës.
+Rasti 2 – Pa vende
 
-## Problemet e identifikuara
+Parashikimi
+Nëse një udhëtim ka 0 vende të lira, përdoruesi nuk duhet të ketë mundësi të kërkojë vend. Aplikacioni duhet të shfaqë një mesazh që tregon se nuk ka vende të lira dhe të mos premtojë rezervim.
 
-1. Gjatë kontrollimit të skedarit `schema.sql`, vura re se disa emra kolonash nuk ishin të njëjtë me ata që përdoren në databazën Neon. Në skedar ishin `destinacioni` dhe `vende`, ndërsa në databazë përdoren `mberritja` dhe `vende_lira`.
-2. Gjithashtu, në strukturën e `schema.sql` mungonte kolona `shofer_id`, e cila gjendet në tabelën përkatëse në databazën aktuale.
+Dy probleme
+Në skedarin schema.sql disa emra kolonash nuk përputheshin me strukturën aktuale të databazës Neon. Në skedar përdorej destinacioni dhe vende, ndërsa në databazë përdoren mberritja dhe vende_lira.
 
-## Korrigjimi i realizuar
+Në skedarin schema.sql mungonte kolona shofer_id që ekziston në databazën aktuale.
 
-Ndryshova skedarin `schema.sql` për ta përshtatur strukturën e tij me atë që përdoret aktualisht në Neon. Për këtë arsye, përditësova emrat e kolonave që nuk përputheshin dhe shtova kolonën e munguar `shofer_id`.
+Korrigjimi
+Skedari: schema.sql
 
-Me këtë korrigjim, struktura e përshkruar në skedar është më e harmonizuar me strukturën aktuale të databazës.
+Arsyeja:
 
-## Testimi
+Përditësova schema.sql që të përputhet me strukturën aktuale të databazës Neon. Ndryshova emrat e kolonave që nuk përputheshin dhe shtova kolonën shofer_id që mungonte.
 
-### Testi 1 – Udhëtim pa vende të lira
-- **Hapat:** Hapa udhëtimin Lipjan – AAB.
-- **Pritshmëria:** Përdoruesi nuk duhet të ketë mundësi të kërkojë një vend.
-- **Vëzhgimi:** Aplikacioni shfaq 0 vende të lira dhe njoftimin "Nuk ka vende të lira".
+Ndryshimi i ri
+Ndryshimi u realizua vetëm në skedarin schema.sql. Nuk ndryshova të dhëna reale në databazë. Qëllimi ishte përputhja e strukturës së dokumentuar me strukturën aktuale të databazës.
 
-### Testi 2 – Udhëtim me vende të disponueshme
-- **Hapat:** Zgjodha udhëtimin Prishtinë – AAB.
-- **Pritshmëria:** Kur ka vende të lira, duhet të jetë e mundur të vazhdohet te kërkesa për vend.
-- **Vëzhgimi:** Shfaqen 2 vende të lira dhe lidhja "Kërko vend".
+Prova 1
+Hapat:
 
-### Testi 3 – Kontrollimi i kërkesës për vend
-- **Hapat:** Klikova në lidhjen "Kërko vend".
-- **Pritshmëria:** Aplikacioni duhet të tregojë se në çfarë gjendjeje është kërkesa.
-- **Vëzhgimi:** Shfaqet statusi "Simulim: Në pritje", së bashku me njoftimin se kërkesa nuk i është dërguar shoferit.
+Hapa udhëtimin Lipjan – AAB me 0 vende të lira.
 
-## Ndryshimi i inputit
-Gjatë këtij procesi nuk bëra ndryshime në të dhënat e udhëtimeve në databazë. Ndryshimi u realizua vetëm në skedarin `schema.sql`, duke përmirësuar përputhjen e strukturës së tij me databazën ekzistuese.
+Pritshmëria:
 
-## Përdorimi i AI
-Gjatë punës përdora AI për të kontrolluar strukturën e skedarit `schema.sql`, për të identifikuar dallimet me databazën Neon dhe për të marrë ndihmë në realizimin e korrigjimit.
+Përdoruesi nuk duhet të ketë mundësi të kërkojë vend.
 
-## Commit-et
+Vëzhgimi:
 
-- **Para korrigjimit:** https://github.com/gresabajrami/rideshare-mobile/commit/454c8fa0b47cabe43d6e8fabcd4fd95c47f1d2fb
-- **Pas korrigjimit:** https://github.com/gresabajrami/rideshare-mobile
+Aplikacioni shfaqi 0 vende të lira dhe mesazhin "Nuk ka vende të lira".
+
+Prova 2
+Hapat:
+
+Zgjodha një udhëtim tjetër me vende të lira.
+
+Pritshmëria:
+
+Kur ka vende të lira duhet të shfaqet mundësia për të vazhduar me kërkesën për vend.
+
+Vëzhgimi:
+
+U shfaqën 2 vende të lira dhe lidhja "Kërko vend".
+
+Prova 3
+Hapat:
+
+Klikova te "Kërko vend" në një udhëtim me vende të lira.
+
+Pritshmëria:
+
+Duhet të shfaqet statusi i kërkesës dhe të kuptohet që bëhet fjalë vetëm për demonstrim.
+
+Vëzhgimi:
+
+U shfaq statusi "Simulim: Në pritje" dhe njoftimi që kërkesa nuk i është dërguar shoferit.
+
+Ndihma nga AI
+Përdora AI për të identifikuar dallimet mes schema.sql dhe strukturës së databazës Neon, për të kuptuar problemet dhe për të dokumentuar korrigjimin në raport.
+
+Commit-et
+Para:
+
+https://github.com/gresabajrami/rideshare-mobile/commit/454c8fa0b47cabe43d6e8fabcd4fd95c47f1d2fb
+
+Pas:
+
