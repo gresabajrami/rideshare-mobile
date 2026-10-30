@@ -29,38 +29,29 @@ Skedari: aplikacioni/src/app/udhetimi/[id]/page.tsx
 
 Arsyeja: Faqja e detajeve kontrollon numrin e vendeve të lira. Kur numri është 0, shfaq butonin e çaktivizuar “Nuk ka vende të lira” dhe nuk ofron lidhjen “Kërko vend”. Kur ka vende, shfaq lidhjen për kërkesën demonstrative. Korrigjimi i skemës u bë në `aplikacioni/schema.sql`: u përditësuan emrat e kolonave dhe u shtua `shofer_id`. Nuk pretendova se ndryshova të dhëna në databazë.
 
-Prova 1:
+### Prova 1
 
-Hapat:
-Hapa listën në `localhost:3003`, zgjodha udhëtimin ID 1 dhe hapa detajet.
+Hapat: Hapa listën në `localhost:3003`, zgjodha udhëtimin ID 1 dhe hapa detajet.
 
-Pritshmëria:
-Detajet duhet t’i përkasin të njëjtit udhëtim dhe, me vende të lira, të ofrojnë vazhdimin te kërkesa.
+Pritshmëria: Detajet duhet t’i përkasin të njëjtit udhëtim dhe, me vende të lira, të ofrojnë vazhdimin te kërkesa.
 
-Vëzhgimi:
-Lista dhe faqja e detajeve treguan Prishtinë – AAB, orën 08:00 dhe 2 vende të lira. Në detaje u shfaq lidhja “Kërko vend”.
+Vëzhgimi: Lista dhe faqja e detajeve treguan Prishtinë – AAB, orën 08:00 dhe 2 vende të lira. Në detaje u shfaq lidhja “Kërko vend”.
 
-Prova 2:
+### Prova 2
 
-Hapat:
-Hapa detajet e udhëtimit ID 3, Lipjan – AAB, që në listë shfaqej me 0 vende.
+Hapat: Hapa detajet e udhëtimit ID 3, Lipjan – AAB, që në listë shfaqej me 0 vende.
 
-Pritshmëria:
-Duhet të tregohet se nuk ka vende të lira dhe të mos ofrohet kërkesa për vend.
+Pritshmëria: Duhet të tregohet se nuk ka vende të lira dhe të mos ofrohet kërkesa për vend.
 
-Vëzhgimi:
-Faqja tregoi Lipjan – AAB, orën 07:45 dhe “Vende të lira: 0”. U shfaq butoni i çaktivizuar “Nuk ka vende të lira”; lidhja “Kërko vend” nuk u shfaq.
+Vëzhgimi: Faqja tregoi Lipjan – AAB, orën 07:45 dhe “Vende të lira: 0”. U shfaq butoni i çaktivizuar “Nuk ka vende të lira”; lidhja “Kërko vend” nuk u shfaq.
 
-Prova 3:
+### Prova 3
 
-Hapat:
-Hapa udhëtimin ID 2, Fushë Kosovë – AAB, me 1 vend të lirë, dhe vazhdova te faqja e kërkesës.
+Hapat: Hapa udhëtimin ID 2, Fushë Kosovë – AAB, me 1 vend të lirë, dhe vazhdova te faqja e kërkesës.
 
-Pritshmëria:
-Me një vend të lirë duhet të shfaqet kërkesa demonstrative dhe të sqarohet se nuk dërgohet ose konfirmohet rezervim real.
+Pritshmëria: Me një vend të lirë duhet të shfaqet kërkesa demonstrative dhe të sqarohet se nuk dërgohet ose konfirmohet rezervim real.
 
-Vëzhgimi:
-Faqja tregoi “Simulim: Në pritje”, “Kërkesa për Fushë Kosovë nuk është dërguar te shoferi” dhe se ruajtja e konfirmimi real do të shtohen më vonë.
+Vëzhgimi: Faqja tregoi “Simulim: Në pritje”, “Kërkesa për Fushë Kosovë nuk është dërguar te shoferi” dhe se ruajtja e konfirmimi real do të shtohen më vonë.
 
 ## Ndihma nga AI
 
