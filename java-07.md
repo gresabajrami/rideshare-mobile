@@ -59,8 +59,6 @@ Përdora AI për të kuptuar dallimet mes skemës SQL dhe strukturës së databa
 
 ## Versionet
 
-Para:
-https://github.com/gresabajrami/rideshare-mobile/commit/454c8fa0b47cabe43d6e8fabcd4fd95c47f1d2fb
+Para: https://github.com/gresabajrami/rideshare-mobile/commit/454c8fa0b47cabe43d6e8fabcd4fd95c47f1d2fb
 
-Pas:
-https://github.com/gresabajrami/rideshare-mobile/commit/b55b1e8c1e18cc902f1a6e09e9155df64feed1f7
+Pas: https://github.com/gresabajrami/rideshare-mobile/commit/b55b1e8c1e18cc902f1a6e09e9155df64feed1f7
