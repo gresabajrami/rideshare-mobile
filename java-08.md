@@ -1,52 +1,42 @@
-
 # RideShare — Java 8
 
 ## Çfarë ndërtova
-
-Këtë javë shtova funksionalitetin për vendtakimin. Përdoruesi mund ta shkruajë vetë vendtakimin dhe ta konfirmojë, ose mund të provojë ta marrë vendndodhjen përmes Geolocation API. Nëse e refuzon lejen, mund të vazhdojë ta shkruajë vendtakimin manualisht. Gjithashtu krijova një faqe të veçantë për testimin e këtij funksionaliteti.
+Te detajet e udhetimit shtova komponentin e klientit Vendtakimi. Ka nje fushe "Shkruaj vendtakimin" me butonin "Konfirmo ne telefon" (dy vlera me useState dhe trim() per tekstin bosh) dhe butonin "Perdor vendndodhjen time", qe e kerkon lejen vetem pas klikimit. Cdo rezultat (sukses, refuzim, pozicion i padisponueshem, timeout) e mbyll pritjen dhe fusha manuale mbetet aktive. Te faqja /java-08-test perdora te njejtin komponent me udhetimin fiktiv te Dritonit.
 
 ## Provat që bëra
-
 ### Prova 1: Leja nuk kërkohet sapo hapet faqja.
-
-- Hapat: E hapa faqen `/java-08-test` dhe prita pa klikuar butonin për vendndodhje.
-- Rezultati i pritur: Shfletuesi nuk duhet të kërkojë leje automatikisht.
-- Çfarë ndodhi: Faqja u hap normalisht dhe nuk u shfaq kërkesa për leje. Kërkesa u shfaq vetëm pasi klikova butonin "Përdor vendndodhjen time".
+Hapat: Te DevTools → Sensors zgjodha Berlin. Rifreskova localhost:3000/java-08-test pa klikuar, pastaj klikova "Perdor vendndodhjen time".
+Pritshmeria: Faqja nuk kerkon leje ne hapje; pas klikimit merret pozicioni.
+Vezhgimi: Nuk doli kerkese per leje ne hapje. Pas klikimit u shfaq "Pozicioni u mor." dhe "Saktesia rreth 150 m". Kaloi.
 
 ### Prova 2: Refuzimi i lejes nuk e bllokon përdoruesin.
-
-- Hapat: Klikova butonin për vendndodhje dhe e refuzova lejen në shfletues.
-- Rezultati i pritur: Të shfaqet mesazhi për refuzimin dhe përdoruesi të mund ta shkruajë vendtakimin manualisht.
-- Çfarë ndodhi: U shfaq mesazhi që leja ishte refuzuar. Pastaj shkrova vendtakimin manualisht dhe e konfirmova pa problem.
+Hapat: Te ikona prane adreses e fika Location, rifreskova dhe klikova butonin. Pastaj shkruajta Biblioteka dhe konfirmova. Me Location te lejuar, te Sensors zgjodha "Location unavailable" dhe klikova serish.
+Pritshmeria: Del mesazh, pritja mbaron dhe vendtakimi manual konfirmohet.
+Vezhgimi: U shfaq "Leja u refuzua. Shkruaj vendtakimin vete." dhe u konfirmua "Biblioteka". Me "Location unavailable" u shfaq "Pozicioni nuk eshte i disponueshem..." dhe butoni u be serish aktiv. Kaloi.
 
 ### Prova 3: Dëshmitë në GitHub nuk tregojnë adresën time reale.
-
-- Hapat: Kontrollova skedarët dhe ndryshimet që përgatita për GitHub.
-- Rezultati i pritur: Të mos publikohen adresa ose koordinata reale.
-- Çfarë ndodhi: Në skedarët e projektit nuk vendosa adresën ose koordinatat e mia reale. Për testim përdora vetëm të dhëna fiktive.
+Hapat: Kontrollova fotot dhe skedaret qe publikoj.
+Pritshmeria: Nuk ka koordinata reale, adresa ose sekrete.
+Vezhgimi: Fotot jane me vendndodhjen fiktive te Berlinit (150 m). Ekrani tregon vetem saktesine, jo koordinatat. .env.local nuk ngarkohet ne GitHub. Kaloi.
 
 ## Ku gjendet puna
-
-- `aplikacioni/src/components/Vendtakimi.tsx` – komponenti për vendtakimin dhe vendndodhjen.
-- `aplikacioni/src/app/udhetimi/[id]/page.tsx` – integrimi në detajet e udhëtimit.
-- `aplikacioni/src/app/java-08-test/page.tsx` – faqja e testimit.
-- `mobile-week08.json` – konfigurimi i faqes së testimit.
-- `java-08.md` – dokumentimi i punës.
-
-Linku i demonstrimit: `http://localhost:3000/java-08-test` 
+aplikacioni/src/components/Vendtakimi.tsx
+aplikacioni/src/app/udhetimi/[id]/page.tsx
+aplikacioni/src/app/java-08-test/page.tsx
+mobile-week08.json
+Demonstrimi nuk eshte publikuar ne Vercel.
 
 ## Çfarë mbetet për përmirësim
-
-Një përmirësim që mund të bëhet është ruajtja e vendtakimit në databazë, sepse aktualisht të dhënat ruhen vetëm gjatë kohës që faqja është e hapur. Në të ardhmen mund të bëhet që edhe shoferi ta shohë vendtakimin e konfirmuar.
+Pas rifreskimit vendtakimi i konfirmuar humbet, sepse ruhet vetem ne gjendjen lokale. Dritoni ende nuk e sheh. Hapi i ardhshem: ta ruaj ne Neon dhe t'ia dergoj shoferit.
 
 ## Ndihma nga AI (Artificial Intelligence – inteligjencë artificiale)
-
 Jo
 
 ## Prova me një hyrje të re
+- Hyrja që provova: vetem hapesira, pasi kisha konfirmuar Biblioteka
+- Parashikimi im para klikimit: Pritja qe vendtakimi te mos ndryshoje, sepse trim() i heq hapesirat dhe teksti behet bosh, prandaj duhet te dale nje mesazh gabimi.
+- Çfarë pashë realisht: U shfaq "Shkruaj vendtakimin para se ta konfirmosh." dhe vendtakimi i konfirmuar mbeti "Biblioteka".
+- Skedari dhe funksioni që e shpjegojnë: aplikacioni/src/components/Vendtakimi.tsx, funksioni konfirmo() me trim()
+- Çfarë kuptova ose korrigjova: Shkrimi dhe konfirmimi jane dy vlera te ndara. trim() e kthen tekstin me hapesira ne bosh, keshtu konfirmo() del me return para se te ndryshoje vendtakimin, dhe zgjedhja e meparshme ruhet.
 
-- Hyrja që provova: Shkrova një vendtakim të ri, por nuk klikova butonin Konfirmo.
-- Parashikimi im para klikimit: Vendtakimi i ri nuk duhet të ruhet pa konfirmimin tim.
-- Çfarë pashë realisht: Vendtakimi i mëparshëm mbeti i pandryshuar edhe pasi shkrova një vendtakim të ri pa e konfirmuar.
-- Skedari dhe funksioni që e shpjegojnë: `aplikacioni/src/components/Vendtakimi.tsx`, funksioni `konfirmo()`.
-- Çfarë kuptova ose korrigjova: Kuptova se vendtakimi ndryshon vetëm kur përdoruesi klikon Konfirmo. Kjo ndihmon që ndryshimet aksidentale të mos ruhen.
+Këtë pjesë e shpjegoj në klasë. Kontrolli automatik nuk verifikon vërtetësinë e provës.
