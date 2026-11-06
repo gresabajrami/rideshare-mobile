@@ -91,7 +91,10 @@ export default function Vendtakimi() {
         id="vt"
         data-testid="meeting-input"
         value={teksti}
-        onChange={(e) => setTeksti(e.target.value)}
+        onChange={(e) => {
+          setTeksti(e.target.value);
+          setGabimi("");
+        }}
       />
 
       <button
