@@ -9,3 +9,19 @@ main { max-width: 720px; margin: auto; padding: 24px; }
   margin-top: 12px; padding: 8px 14px; border-radius: 8px;
   background: #3548d4; color: white; }
 .action:disabled { background: #39455b; color: #e4eaf4; cursor: default; }
+
+/* Java 9 · të preferuarat */
+.preferimi { margin-top: 20px; }
+.preferimi-perdoruesi { color: #ffc56b; margin-bottom: 0; }
+.preferimi-buton { width: 100%; justify-content: flex-start; font-weight: 700;
+  font-size: 1.05rem; background: #463a24; border: 1px solid #c9a35a; color: #ffd27f; }
+.preferimi-buton[data-state="saved"] { color: #8de0b0; }
+.preferimi-buton[data-state="error"] { color: #ff9a9a; }
+.preferimi-buton[aria-busy="true"] { cursor: progress; }
+[data-tipi="pritje"] { color: #ffd27f; }
+[data-tipi="sukses"] { color: #8de0b0; }
+[data-tipi="gabim"] { color: #ff9a9a; }
+.preferimi-numri { display: flex; justify-content: space-between; margin-bottom: 4px; }
+.preferimi-shenim { font-size: 0.8rem; color: #a9b6cc; margin-top: 0; }
+.link-buton { background: none; border: 0; padding: 8px 0; color: #89ddff;
+  text-decoration: underline; cursor: pointer; font: inherit; }

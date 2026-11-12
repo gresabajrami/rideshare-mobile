@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { gjejUdhetimin } from "@/lib/udhetimet";
 import Vendtakimi from "@/components/Vendtakimi";
+import PreferimiServer from "@/components/PreferimiServer";
 
 export const dynamic = "force-dynamic";
 
@@ -47,7 +48,10 @@ export default async function Detajet({
         </button>
       )}
 
+      <PreferimiServer udhetimiId={id} />
+
       <Vendtakimi />
     </main>
   );
 }
+  
